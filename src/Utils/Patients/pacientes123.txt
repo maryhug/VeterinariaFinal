@@ -1,0 +1,76 @@
+Nombre de la mascota: Max
+Especie: Perro
+Otra especie:
+Sexo: Masculino
+Fecha de nacimiento: 10 de enero de 2020
+Señas particulares: Cola corta, manchas negras en el lomo
+Peso: 15 kg
+Esterilización: Sí
+Historial clínico: Vacunas completas, alergia alimentaria
+Nombre del propietario: Ana López
+Teléfono del propietario: 555-5678
+Dirección del propietario: Avenida Siempre Viva 456, Ciudad, País
+
+
+_______________________________________
+Nombre de la mascota: Luna
+Especie: Perro
+Otra especie: —
+Sexo: Femenino
+Fecha de nacimiento: 5 de mayo de 2019
+Señas particulares: Ojos azules, pelaje gris
+Peso: 10 kg
+Esterilización: Sí
+Historial clínico: Control de pulgas y garrapatas, vacunación reciente
+Nombre del propietario: Carlos Martínez
+Teléfono del propietario: 555-9876
+Dirección del propietario: Calle Ficticia 789, Ciudad, País
+
+
+__________________________________________
+Nombre de la mascota: Rocky
+Especie: Perro
+Otra especie: —
+Sexo: Masculino
+Fecha de nacimiento: 22 de julio de 2018
+Señas particulares: Orejas caídas, pelaje marrón
+Peso: 18 kg
+Esterilización: Sí
+Historial clínico: Enfermedad pasada, control veterinario trimestral
+Nombre del propietario: María González
+Teléfono del propietario: 555-2345
+Dirección del propietario: Calle Real 321, Ciudad, País
+
+
+__________________________________________
+Nombre de la mascota: Bella
+Especie: Perro
+Otra especie: —
+Sexo: Femenino
+Fecha de nacimiento: 30 de octubre de 2022
+Señas particulares: Manchas de diferentes colores, tamaño pequeño
+Peso: 8 kg
+Esterilización: Sí
+Historial clínico: Primera vacunación completa
+Nombre del propietario: Roberto Fernández
+Teléfono del propietario: 555-8765
+Dirección del propietario: Calle Luna 456, Ciudad, País
+
+
+__________________________________________
+Nombre de la mascota: Toby
+Especie: Perro
+Otra especie: —
+Sexo: Masculino
+Fecha de nacimiento: 15 de febrero de 2021
+Señas particulares: Manto rizado, patas largas
+Peso: 20 kg
+Esterilización: Sí
+Historial clínico: Sin antecedentes médicos significativos
+Nombre del propietario: Sofía Ruiz
+Teléfono del propietario: 555-3456
+Dirección del propietario: Calle del Sol 135, Ciudad, País
+
+
+__________________________________________
+

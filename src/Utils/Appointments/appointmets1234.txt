@@ -1,0 +1,4 @@
+Paciente: Cora
+Fecha: 1 de Enero de 2024
+Lugar: San Javier
+

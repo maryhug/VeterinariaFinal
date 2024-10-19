@@ -1,0 +1,15 @@
+Nombre de la mascota: Cora
+Especie: Gato
+Otra especie: 
+Sexo: Macho
+Fecha de nacimiento: 7
+Señas particulares: negra completa
+Peso: 8
+Esterilización: No
+Historial Clinico: salud total
+Nombre del propietario: Alejandro marulanda
+Teléfono del propietario: 3148614427
+Dirección del propietario: cr86B#49dd-113
+
+
+__________________________________________
