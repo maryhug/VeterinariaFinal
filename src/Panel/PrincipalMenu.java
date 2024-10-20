@@ -97,7 +97,7 @@ public class PrincipalMenu extends JFrame {
 		});
 		btnSearchPatients.setBounds(0, 268, 225, 49);
 		panelOptions.add(btnSearchPatients);
-		
+
 		JButton btnPetsRegistration = new JButton("Ingresar de Pacientes");
 		btnPetsRegistration.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -119,7 +119,7 @@ public class PrincipalMenu extends JFrame {
 		lblGifResponse.setIcon(new ImageIcon(PrincipalMenu.class.getResource("/images/mainBanner.gif")));
 		lblGifResponse.setBounds(0, 121, 489, 200);
 		panelResponse.add(lblGifResponse);
-		
+
 		JLabel lblTextMenu = new JLabel("Menu Opciones");
 		lblTextMenu.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTextMenu.setFont(new Font("Hello Valentica", Font.PLAIN, 35));
