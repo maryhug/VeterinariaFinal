@@ -16,6 +16,7 @@ public class SearchPatients extends JFrame {
 	private JTextField textFieldSearch;
 	private JComboBox<String> comboBoxPatients;
 	private JTextArea textAreaResponse;
+	private JButton btnDeletePatient;
 
 	public SearchPatients() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,14 +68,40 @@ public class SearchPatients extends JFrame {
 		textAreaResponse.setEditable(false);
 		panelSearch.add(textAreaResponse);
 
+		btnDeletePatient = new JButton("Eliminar Paciente");
+		btnDeletePatient.setBackground(new Color(55, 160, 255));
+		btnDeletePatient.setBounds(150, 330, 160, 30);
+		btnDeletePatient.setVisible(false);
+		panelSearch.add(btnDeletePatient);
+
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String selectedPatient = (String) comboBoxPatients.getSelectedItem();
 				if (selectedPatient != null) {
 					String medicalHistory = SearchPatientMethods.getPatientInfo(selectedPatient);
 					textAreaResponse.setText(medicalHistory);
+					btnDeletePatient.setVisible(true);
 				} else {
 					textAreaResponse.setText("Seleccione un paciente.");
+					btnDeletePatient.setVisible(false);
+				}
+			}
+		});
+
+		btnDeletePatient.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String selectedPatient = (String) comboBoxPatients.getSelectedItem();
+				if (selectedPatient != null) {
+					int confirmation = JOptionPane.showConfirmDialog(null, "¿Está seguro de que desea eliminar este paciente?",
+							"Confirmación de eliminación", JOptionPane.YES_NO_OPTION);
+
+					if (confirmation == JOptionPane.YES_OPTION) {
+						SearchPatientMethods.DeletePet(selectedPatient);
+						JOptionPane.showMessageDialog(null, "Paciente eliminado correctamente.");
+						comboBoxPatients.removeItem(selectedPatient);
+						textAreaResponse.setText("");
+						btnDeletePatient.setVisible(false);
+					}
 				}
 			}
 		});
@@ -131,6 +158,19 @@ public class SearchPatients extends JFrame {
 		});
 		btnAppointments.setBounds(0, 213, 225, 49);
 		panelOptions.add(btnAppointments);
+
+
+		JButton btnReports = new JButton("Reporte Cita");
+		btnReports.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ReportAppointment l = new ReportAppointment();
+				l.setVisible(true);
+			}
+		});
+		btnReports.setBounds(0, 323, 225, 49);
+		panelOptions.add(btnReports);
+
 
 		JButton btnExit = new JButton("Salir del programa");
 		btnExit.addActionListener(new ActionListener() {

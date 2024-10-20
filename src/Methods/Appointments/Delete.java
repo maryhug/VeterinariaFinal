@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Delete extends JPanel {
-
 	private static final long serialVersionUID = 1L;
 	private JComboBox<String> comboBox;
 	String username = LoginUsers.globalUsername;
@@ -37,6 +36,7 @@ public class Delete extends JPanel {
 				if (selectedPatient != null) {
 					System.out.println("Nombre del paciente seleccionado: " + selectedPatient);
 					deletePatient(selectedPatient);
+					reloadComboBox();
 				}
 			}
 		});
@@ -44,6 +44,7 @@ public class Delete extends JPanel {
 	}
 
 	private void loadPatientsFromFile() {
+		comboBox.removeAllItems();
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			StringBuilder appointment = new StringBuilder();
 			String line;
@@ -78,33 +79,28 @@ public class Delete extends JPanel {
 							found = true;
 						} else {
 							appointments.add(appointment.toString().trim());
-							appointments.add(""); // Agregar línea en blanco
+							appointments.add("");
 						}
 					}
 					appointment.setLength(0);
 				}
 				appointment.append(line.trim()).append("\n");
 			}
-
 			if (!appointment.isEmpty()) {
 				if (appointment.toString().trim().equals(patientToDelete)) {
 					found = true;
 				} else {
 					appointments.add(appointment.toString().trim() + "\n");
-					appointments.add(""); // Agregar línea en blanco
+					appointments.add("");
 				}
 			}
-
 			if (found) {
 				try (BufferedWriter bw = new BufferedWriter(new FileWriter(path))) {
 					for (String appt : appointments) {
-						bw.write(appt);
-						bw.newLine();
+						if (!appt.trim().isEmpty()) {
+							bw.write(appt);
+						}
 					}
-				}
-				comboBox.removeAllItems();
-				for (String appt : appointments) {
-					comboBox.addItem(appt + "\n");
 				}
 				System.out.println("Paciente eliminado: " + patientToDelete);
 			} else {
@@ -113,6 +109,9 @@ public class Delete extends JPanel {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	private void reloadComboBox() {
+		loadPatientsFromFile();
 	}
 
 }

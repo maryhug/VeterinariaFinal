@@ -76,6 +76,17 @@ public class PrincipalMenu extends JFrame {
 		btnExit.setBounds(0, 399, 225, 49);
 		panelOptions.add(btnExit);
 
+		JButton btnReports = new JButton("Reporte Cita");
+		btnReports.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ReportAppointment l = new ReportAppointment();
+				l.setVisible(true);
+			}
+		});
+		btnReports.setBounds(0, 323, 225, 49);
+		panelOptions.add(btnReports);
+
 		JButton btnSearchPatients = new JButton("Busqueda de Pacientes");
 		btnSearchPatients.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {

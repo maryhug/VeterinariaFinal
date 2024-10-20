@@ -4,10 +4,15 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import Authentication.LoginUsers;
 import Methods.MedicalHistory.MedicalHistoryMethod;
-import java.awt.Font;
-import java.awt.Color;
+
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MedicalHistory extends JFrame {
 
@@ -16,6 +21,9 @@ public class MedicalHistory extends JFrame {
 	private JTextField textFieldHistory;
 	private JComboBox<String> comboBoxPatients;
 	private JTextArea textAreaHistory;
+	private static String username = LoginUsers.globalUsername;
+	private static String PATH3 = "src/Utils/ReportAppointments/Reports" + username + ".txt";
+
 
 	public MedicalHistory() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -94,6 +102,17 @@ public class MedicalHistory extends JFrame {
 		btnSearchPatients.setBounds(0, 268, 225, 49);
 		panelOptions.add(btnSearchPatients);
 
+		JButton btnReports = new JButton("Reporte Cita");
+		btnReports.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+				ReportAppointment l = new ReportAppointment();
+				l.setVisible(true);
+			}
+		});
+		btnReports.setBounds(0, 323, 225, 49);
+		panelOptions.add(btnReports);
+
 		JButton btnExit = new JButton("Salir del programa");
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -114,38 +133,53 @@ public class MedicalHistory extends JFrame {
 		JPanel panelHistory = new JPanel();
 		panelHistory.setBounds(10, 92, 469, 356);
 		panelResponse.add(panelHistory);
-		panelHistory.setLayout(null);
+		panelHistory.setLayout(new BorderLayout());
 
+		JPanel selectPatientPanel = new JPanel();
+		selectPatientPanel.setLayout(new FlowLayout());
 		JLabel lblHistory = new JLabel("Seleccione un paciente:");
-		lblHistory.setHorizontalAlignment(SwingConstants.LEFT);
-		lblHistory.setBounds(10, 11, 274, 25);
-		panelHistory.add(lblHistory);
-
 		comboBoxPatients = new JComboBox<>();
-		comboBoxPatients.setBounds(10, 42, 349, 25);
-		panelHistory.add(comboBoxPatients);
-
 		JButton btnHistory = new JButton("Buscar");
-		btnHistory.setBounds(370, 43, 89, 23);
-		panelHistory.add(btnHistory);
+		MedicalHistoryMethod.loadPatients(comboBoxPatients);
+		JPanel reportPanel = new JPanel();
+		reportPanel.setLayout(new BoxLayout(reportPanel, BoxLayout.Y_AXIS));
+		JScrollPane scrollPane = new JScrollPane(reportPanel);
 
 		textAreaHistory = new JTextArea();
-		textAreaHistory.setBounds(10, 80, 450, 250);
 		textAreaHistory.setEditable(false);
-		panelHistory.add(textAreaHistory);
-		MedicalHistoryMethod.loadPatients(comboBoxPatients);
+		textAreaHistory.setPreferredSize(new Dimension(450, 100));
 
 		btnHistory.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				reportPanel.removeAll();
 				textAreaHistory.setText("");
 				String selectedPatient = (String) comboBoxPatients.getSelectedItem();
 				if (selectedPatient != null) {
+					List<String> reports = MedicalHistoryMethod.loadReports(selectedPatient);
+					if (reports.isEmpty()) {
+						JLabel noReportsLabel = new JLabel("No hay reportes médicos para este paciente.");
+						reportPanel.add(noReportsLabel);
+					} else {
+						for (String report : reports) {
+							JPanel reportCard = MedicalHistoryMethod.createReportCard(report);
+							reportPanel.add(reportCard);
+						}
+					}
 					String history = MedicalHistoryMethod.getMedicalHistory(selectedPatient);
 					textAreaHistory.setText(history);
 				} else {
-					JOptionPane.showMessageDialog(null, "seleccione un paciente.");
+					JOptionPane.showMessageDialog(null, "Seleccione un paciente.");
 				}
+				reportPanel.revalidate();
+				reportPanel.repaint();
 			}
 		});
+		selectPatientPanel.add(lblHistory);
+		selectPatientPanel.add(comboBoxPatients);
+		selectPatientPanel.add(btnHistory);
+		panelHistory.add(selectPatientPanel, BorderLayout.NORTH);
+		panelHistory.add(textAreaHistory, BorderLayout.CENTER);
+		panelHistory.add(scrollPane, BorderLayout.SOUTH);
 	}
+
 }

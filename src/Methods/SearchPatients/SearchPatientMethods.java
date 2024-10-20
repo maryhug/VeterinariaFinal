@@ -3,9 +3,9 @@ package Methods.SearchPatients;
 import Authentication.LoginUsers;
 
 import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchPatientMethods {
     private static String username = LoginUsers.globalUsername;
@@ -50,4 +50,36 @@ public class SearchPatientMethods {
         }
         return patientInfo.toString().trim();
     }
+
+    public static void DeletePet(String nombreMascota) {
+        List<String> lineasArchivo = new ArrayList<>();
+        boolean eliminarBloque = false;
+
+        try (BufferedReader br = new BufferedReader(new FileReader(PATH))) {
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                if (linea.contains("Nombre de la mascota: " + nombreMascota)) {
+                    eliminarBloque = true;
+                }
+                if (eliminarBloque) {
+                    if (linea.startsWith("__________________________________________")) {
+                        eliminarBloque = false;
+                    }
+                    continue;
+                }
+                lineasArchivo.add(linea);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try (PrintWriter pw = new PrintWriter(new FileWriter(PATH))) {
+            for (String linea : lineasArchivo) {
+                pw.println(linea);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("El bloque de la mascota '" + nombreMascota + "' ha sido eliminado.");
+    }
+
 }

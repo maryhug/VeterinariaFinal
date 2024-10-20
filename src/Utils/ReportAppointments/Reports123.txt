@@ -1,0 +1,12 @@
+Nombre de la Mascota: Cindy
+Fecha de la Cita: 1 de Enero de 2024
+Motivo de la Cita: infeccion 
+----------------------------------------------------
+Nombre de la Mascota: Cindy
+Fecha de la Cita: 5 de Marzo de 2026
+Motivo de la Cita: vomito y se murio
+----------------------------------------------------
+Nombre de la Mascota: Cindy
+Fecha de la Cita: 7 de Febrero de 2024
+Motivo de la Cita: dsfhsdfhsdfhsdfh
+----------------------------------------------------

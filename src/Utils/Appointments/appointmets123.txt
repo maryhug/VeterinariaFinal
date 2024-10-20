@@ -1,9 +1,18 @@
-Paciente: Rocky
+Paciente: Cindy
 Fecha: 1 de Enero de 2024
 Lugar: San Javier
 
-Paciente: Bella
-Fecha: 1 de Enero de 2024
+
+
+Paciente: Cindy
+Fecha: 5 de Marzo de 2026
+Lugar: Bello
+
+
+
+Paciente: Cindy
+Fecha: 7 de Febrero de 2024
 Lugar: San Javier
+
 
 

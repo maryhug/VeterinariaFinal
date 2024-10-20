@@ -77,6 +77,17 @@ public class PetsRegistration extends JFrame {
         btnAppointments.setBounds(0, 211, 225, 49);
         panelOptions.add(btnAppointments);
 
+        JButton btnReports = new JButton("Reporte Cita");
+        btnReports.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                ReportAppointment l = new ReportAppointment();
+                l.setVisible(true);
+            }
+        });
+        btnReports.setBounds(0, 323, 225, 49);
+        panelOptions.add(btnReports);
+
         JButton btnExit = new JButton("Salir del programa");
         btnExit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

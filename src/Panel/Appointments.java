@@ -16,6 +16,7 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.util.List;
 
 
 public class Appointments extends JFrame {
@@ -165,6 +166,17 @@ public class Appointments extends JFrame {
         btnAppointments.setBackground(new Color(240, 240, 240));
         btnAppointments.setBounds(0, 213, 225, 49);
         panelOptions.add(btnAppointments);
+
+        JButton btnReports = new JButton("Reporte Cita");
+        btnReports.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                ReportAppointment l = new ReportAppointment();
+                l.setVisible(true);
+            }
+        });
+        btnReports.setBounds(0, 323, 225, 49);
+        panelOptions.add(btnReports);
 
         JButton btnSearchPatients = new JButton("Busqueda de Pacientes");
         btnSearchPatients.addActionListener(new ActionListener() {
