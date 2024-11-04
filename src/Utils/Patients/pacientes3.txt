@@ -1,0 +1,45 @@
+Nombre de la mascota: 55
+Especie: Perro
+Otra especie: 5
+Sexo: 5
+Fecha de nacimiento: 5
+Señas particulares: 5
+Peso: 5
+Esterilización: Sí
+Historial Clinico: 55
+Nombre del propietario: 5
+Teléfono del propietario: 5
+Dirección del propietario: 5
+
+
+__________________________________________
+Nombre de la mascota: 3
+Especie: Perro
+Otra especie: 
+Sexo: 
+Fecha de nacimiento: 
+Señas particulares: 
+Peso: 
+Esterilización: Sí
+Historial Clinico: 
+Nombre del propietario: 
+Teléfono del propietario: 
+Dirección del propietario: 
+
+
+__________________________________________
+Nombre de la mascota: y
+Especie: Perro
+Otra especie: 
+Sexo: 
+Fecha de nacimiento: 
+Señas particulares: 
+Peso: 
+Esterilización: Sí
+Historial Clinico: 
+Nombre del propietario: 
+Teléfono del propietario: 
+Dirección del propietario: 
+
+
+__________________________________________

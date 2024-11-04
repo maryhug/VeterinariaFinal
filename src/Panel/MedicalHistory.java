@@ -8,10 +8,7 @@ import Methods.MedicalHistory.MedicalHistoryMethod;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class MedicalHistory extends JFrame {

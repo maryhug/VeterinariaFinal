@@ -35,7 +35,7 @@ public class PetsRegistrationMethod {
             writer.close();
             JOptionPane.showMessageDialog(null, "Datos guardados");
         } catch (IOException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al guardar los datos.");
         }
     }

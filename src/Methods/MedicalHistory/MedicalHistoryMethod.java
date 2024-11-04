@@ -12,7 +12,7 @@ import java.util.List;
 
 public class MedicalHistoryMethod {
     private static String username = LoginUsers.globalUsername;
-    private static String PATH = "src/Utils/Patients/pacientes"+username+".txt";
+    private static String PATH = "src/Utils/Patients/pacientes"+ username +".txt";
     private static String PATH3 = "src/Utils/ReportAppointments/Reports" + username + ".txt";
 
 
@@ -30,7 +30,7 @@ public class MedicalHistoryMethod {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         for (String patient : patients) {
             comboBoxPatients.addItem(patient);
@@ -64,7 +64,7 @@ public class MedicalHistoryMethod {
                 return "Historial clínico no encontrado para el paciente: " + patientName;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+           // e.printStackTrace();
             return "Error al leer el historial clínico.";
         }
         return history.toString().trim();
@@ -91,7 +91,7 @@ public class MedicalHistoryMethod {
                 reports.add(report.toString());
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al cargar los reportes.");
         }
         return reports;

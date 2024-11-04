@@ -4,19 +4,14 @@ import java.awt.EventQueue;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
 
 import Methods.Login.LoginMethod;
 import Panel.PrincipalMenu;
 
-import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 
 public class LoginUsers extends JFrame {
 

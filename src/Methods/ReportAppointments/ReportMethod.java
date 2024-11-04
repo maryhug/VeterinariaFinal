@@ -25,7 +25,7 @@ public class ReportMethod {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return petNames.toArray(new String[0]);
     }
@@ -48,7 +48,7 @@ public class ReportMethod {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         return appointmentDates;
     }
@@ -62,7 +62,7 @@ public class ReportMethod {
             writer.write("----------------------------------------------------\n");
             System.out.println("Reporte Guardado en " + PATH3);
         } catch (IOException ex) {
-            ex.printStackTrace();
+            //ex.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error al guardar la cita.");
         }
     }

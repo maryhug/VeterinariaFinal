@@ -127,7 +127,7 @@ public class PetsRegistration extends JFrame {
 
         JPanel panelInfo = new JPanel();
         panelInfo.setLayout(null);
-        panelInfo.setPreferredSize(new Dimension(450, 1150));
+        panelInfo.setPreferredSize(new Dimension(450, 790));
         scrollPane.setViewportView(panelInfo);
 
         JLabel lblNewLabel = new JLabel("Nombre de la mascota:");
@@ -237,7 +237,7 @@ public class PetsRegistration extends JFrame {
         panelInfo.add(textField_9);
 
         JButton btnGuardar = new JButton("Guardar");
-        btnGuardar.setBounds(160, 800, 150, 40);
+        btnGuardar.setBounds(160, 730, 150, 40);
         panelInfo.add(btnGuardar);
 
         btnGuardar.addActionListener(new ActionListener() {

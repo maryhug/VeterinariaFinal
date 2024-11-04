@@ -22,7 +22,7 @@ public class PatientListMethod {
                 panel.add(lblUser);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         panel.revalidate();
         panel.repaint();

@@ -1,7 +1,6 @@
 package Methods.Login;
 
 import Authentication.LoginUsers;
-import Panel.PrincipalMenu;
 
 import javax.swing.*;
 import java.io.BufferedReader;
@@ -20,7 +19,7 @@ public class LoginMethod {
                 if (userData.length == 2 && userData[0].equals(username) && userData[1].equals(password)) {
                     userFound = true;
                     LoginUsers.globalUsername = username;
-                    System.out.println(LoginUsers.globalUsername);
+                    //System.out.println(LoginUsers.globalUsername);
                     break;
                 }
             }

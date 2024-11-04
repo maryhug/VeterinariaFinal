@@ -44,3 +44,18 @@ Dirección del propietario:
 
 
 __________________________________________
+Nombre de la mascota: jajaas
+Especie: Perro
+Otra especie: sas
+Sexo: s
+Fecha de nacimiento: s
+Señas particulares: s
+Peso: s
+Esterilización: Sí
+Historial Clinico: s
+Nombre del propietario: s
+Teléfono del propietario: s
+Dirección del propietario: s
+
+
+__________________________________________

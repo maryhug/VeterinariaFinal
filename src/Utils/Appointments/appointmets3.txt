@@ -1,0 +1,12 @@
+Paciente: 55
+Fecha: 3 de Abril de 2024
+Lugar: San Javier
+
+
+
+Paciente: 3
+Fecha: 1 de Junio de 2024
+Lugar: San Javier
+
+
+

@@ -16,8 +16,6 @@ import javax.swing.UIManager;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.List;
-
 
 public class Appointments extends JFrame {
 

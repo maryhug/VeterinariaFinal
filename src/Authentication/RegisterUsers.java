@@ -5,17 +5,11 @@ import Methods.Register.RegisterMethod;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.border.TitledBorder;
 
-import javax.swing.border.EtchedBorder;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
 public class RegisterUsers extends JFrame {
 	private static final long serialVersionUID = 1L;

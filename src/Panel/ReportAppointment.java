@@ -2,11 +2,7 @@ package Panel;
 
 import Authentication.LoginUsers;
 import Methods.ReportAppointments.ReportMethod;
-
 import javax.swing.*;
-import java.awt.*;
-import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReportAppointment extends JFrame {
@@ -83,32 +79,56 @@ public class ReportAppointment extends JFrame {
             l.setVisible(true);
         });
         panelOptions.add(btnExit);
+        
+        JButton btnPetsRegistration = new JButton("Ingresar Pacientes");
+        btnPetsRegistration.setBounds(0, 57, 225, 49);
+        btnPetsRegistration.addActionListener(e -> {
+            dispose();
+            PetsRegistration l = new PetsRegistration();
+            l.setVisible(true);
+        });
+        panelOptions.add(btnPetsRegistration);
 
         JPanel panelReportForm = new JPanel();
         panelReportForm.setBounds(245, 11, 489, 449); // Ajustar el tamaño del formulario
         panelReportForm.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        panelReportForm.setLayout(new GridLayout(5, 2, 10, 10));
         panelHome.add(panelReportForm);
 
         JLabel lblPetName = new JLabel("Nombre de la Mascota:");
+        lblPetName.setBounds(10, 150, 229, 48);
         comboBoxPetName = new JComboBox<>(ReportMethod.loadPetNamesFromFile());
+        comboBoxPetName.setBounds(249, 150, 229, 48);
+        panelReportForm.setLayout(null);
         panelReportForm.add(lblPetName);
         panelReportForm.add(comboBoxPetName);
 
         JLabel lblAppointmentDay = new JLabel("Día de la Cita:");
+        lblAppointmentDay.setBounds(10, 218, 229, 41);
         comboBoxAppointmentDay = new JComboBox<>();
+        comboBoxAppointmentDay.setBounds(249, 218, 229, 48);
         panelReportForm.add(lblAppointmentDay);
         panelReportForm.add(comboBoxAppointmentDay);
 
         JLabel lblAppointmentReason = new JLabel("Motivo del reporte de Cita:");
-        textAreaAppointmentReason = new JTextArea(3, 20);
+        lblAppointmentReason.setBounds(10, 278, 229, 48);
+        textAreaAppointmentReason = new JTextArea(3, 15);
         JScrollPane scrollPane = new JScrollPane(textAreaAppointmentReason);
+        scrollPane.setBounds(249, 278, 229, 48);
         panelReportForm.add(lblAppointmentReason);
         panelReportForm.add(scrollPane);
 
         JButton btnSubmit = new JButton("Guardar Reporte");
-        panelReportForm.add(new JLabel());
+        btnSubmit.setBounds(129, 362, 229, 40);
         panelReportForm.add(btnSubmit);
+        
+        JLabel lblNewLabel = new JLabel("");
+        lblNewLabel.setBounds(0, 33, 479, 95);
+        
+        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        lblNewLabel.setIcon(new ImageIcon(PrincipalMenu.class.getResource("/images/banner.gif")));
+        
+        
+        panelReportForm.add(lblNewLabel);
 
         btnSubmit.addActionListener(e -> {
             String petName = (String) comboBoxPetName.getSelectedItem();

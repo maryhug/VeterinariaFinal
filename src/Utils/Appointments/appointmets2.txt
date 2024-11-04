@@ -1,0 +1,18 @@
+Paciente: 23
+Fecha: 3 de Febrero de 2027
+Lugar: Poblado
+
+
+
+Paciente: 23
+Fecha: 1 de Junio de 2030
+Lugar: Copacabana
+
+
+
+Paciente: 1
+Fecha: 3 de Abril de 2026
+Lugar: Floresta
+
+
+

@@ -21,7 +21,7 @@ public class SearchPatientMethods {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
     }
 
@@ -45,7 +45,7 @@ public class SearchPatientMethods {
                 return "Información no encontrada para el paciente: " + patientName;
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
             return "Error al leer la información del paciente.";
         }
         return patientInfo.toString().trim();
@@ -70,16 +70,16 @@ public class SearchPatientMethods {
                 lineasArchivo.add(linea);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         try (PrintWriter pw = new PrintWriter(new FileWriter(PATH))) {
             for (String linea : lineasArchivo) {
                 pw.println(linea);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            //e.printStackTrace();
         }
-        System.out.println("El bloque de la mascota '" + nombreMascota + "' ha sido eliminado.");
+        //System.out.println("El bloque de la mascota '" + nombreMascota + "' ha sido eliminado.");
     }
 
 }

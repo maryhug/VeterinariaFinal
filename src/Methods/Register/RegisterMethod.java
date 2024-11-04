@@ -17,10 +17,9 @@ public class RegisterMethod {
                 writer.newLine();
                 JOptionPane.showMessageDialog(null, "Usuario registrado correctamente.");
             }
-        } catch (
-                IOException ex) {
+        } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Error al guardar los datos.");
-            ex.printStackTrace();
+            //ex.printStackTrace();
         }
     }
 }
